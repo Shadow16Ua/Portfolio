@@ -92,35 +92,46 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-document.querySelectorAll('.skill-tag').forEach(tag => {
-    const level = parseInt(tag.dataset.level) || 1;
-    const labels = ['Beginner', 'Basic', 'Intermediate', 'Pro'];
-    const tooltip = document.createElement('div');
-    tooltip.className = 'skill-tooltip';
-    tooltip.innerHTML = `
-        <div class="tooltip-labels"><span>Beginner</span><span>Pro</span></div>
-        <div class="tooltip-bar">${[1,2,3,4].map(i => `<div class="tooltip-segment ${i <= level ? 'filled' : ''}"></div>`).join('')}</div>
-        <div style="font-size:11px; color:var(--text-secondary); margin-top:6px; text-align:center;">${labels[level - 1]}</div>
-    `;
-    tag.appendChild(tooltip);
-});
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.skill-tag').forEach(tag => {
+        const level = parseInt(tag.dataset.level) || 1;
+        const labels = ['Beginner', 'Basic', 'Intermediate', 'Pro'];
+        const tooltip = document.createElement('div');
+        tooltip.className = 'skill-tooltip';
+        
+        let segmentsHtml = '';
+        for(let i = 1; i <= 4; i++) {
+            segmentsHtml += `<div class="tooltip-segment ${i <= level ? 'filled' : ''}"></div>`;
+        }
 
-const headerName = document.querySelector('.header-name');
-const heroTitle = document.querySelector('h1.gradient-text');
+        tooltip.innerHTML = `
+            <div class="tooltip-labels"><span>Beginner</span><span>Pro</span></div>
+            <div class="tooltip-bar">${segmentsHtml}</div>
+            <div class="tooltip-level-name">${labels[level - 1]}</div>
+        `;
+        tag.appendChild(tooltip);
+    });
 
-if (headerName && heroTitle) {
-    const titleObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                headerName.classList.add('visible');
-            } else {
-                headerName.classList.remove('visible');
-            }
+    const headerName = document.querySelector('.header-name');
+    const heroTitle = document.querySelector('h1.gradient-text');
+
+    if (headerName && heroTitle) {
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    headerName.classList.add('visible');
+                } else {
+                    headerName.classList.remove('visible');
+                }
+            });
+        }, { 
+            threshold: 0, 
+            rootMargin: "-68px 0px 0px 0px" 
         });
-    }, { threshold: 0, rootMargin: "-20px 0px 0px 0px" });
 
-    titleObserver.observe(heroTitle);
-}
+        titleObserver.observe(heroTitle);
+    }
+});
 
 const revealElements = document.querySelectorAll('.reveal');
 const revealOptions = {
