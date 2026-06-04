@@ -20,12 +20,11 @@ themeSwitch.addEventListener('click', () => {
 
 const translations = {
     en: {
-        nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
+        nav_about: "About", nav_projects: "Projects", nav_contact: "Contact", nav_skills: "Tech Stack",
         label_portfolio: "Portfolio",
         status_open: "🚀 Open to Work & Internships",
+        btn_contacts: "📬 Contacts & Other links",
         about_text: "Computer science student at DSW IDEIS with hands-on experience in Java, C#, Python, and web development. I build Minecraft mods, Discord bots, and websites — mostly for fun, always learning something new. Sometimes I use AI tools (ChatGPT, Gemini, Claude) as part of my workflow — not just to generate code, but to understand, debug, and improve it.",
-        btn_email: "Email",
-        skill_web: "responsive design", skill_java: "Minecraft modding", skill_cs: "university coursework", skill_py: "Discord bots", skill_sql: "basics", skill_git: "version control", skill_ai: "ChatGPT, Gemini, Claude",
         proj_bank: "C# bank vault management system with LINQ data processing and 100% unit test coverage.",
         proj_afterlight: "Website for a Minecraft server. Custom design, navigation, server IP copy and online counter.",
         proj_tense: "Interactive platform for learning English grammar tenses with quizzes.",
@@ -35,13 +34,12 @@ const translations = {
         footer_tagline: "Let's build something awesome together."
     },
     uk: {
-        nav_about: "Про мене", nav_skills: "Навички", nav_projects: "Проєкти", nav_contact: "Контакти",
+        nav_about: "Про мене", nav_projects: "Проєкти", nav_contact: "Контакти", nav_skills: "Стек технологій",
         label_portfolio: "Портфоліо",
         status_open: "🚀 Відкритий до роботи та стажувань",
-        about_text: "Студент прикладної інформатики в DSW IDEIS з практичним досвідом у Java, C#, Python та веб-розробці. Створюю моди для Minecraft, Discord ботів та сайти — переважно для задоволення та постійного вивчення нового. Використовую ШІ (ChatGPT, Gemini, Claude) у своїй роботі не просто для генерації коду, а для його розуміння, дебагінгу та покращення.",
-        btn_email: "Написати",
-        skill_web: "адаптивний дизайн", skill_java: "моди для Minecraft", skill_cs: "університетські проєкти", skill_py: "Discord боти", skill_sql: "базовий рівень", skill_git: "контроль версій", skill_ai: "ChatGPT, Gemini, Claude",
-        proj_bank: "Система управління банківським сховищем на C# з обробкою даних через LINQ та 100% покриттям unit-тестами.",
+        btn_contacts: "📬 Контакти та інші посилання",
+        about_text: "Студент прикладної інформатики в DSW IDEIS з практичним досвідом у Java, C#, Python та веб-розробці. Створюю моди для Minecraft, Discord ботів та сайти — переважно для задоволення та постійного вивчення нового. Використовую ШІ (ChatGPT, Gemini, Claude) у своїй работе не просто для генерації коду, а для його розуміння, дебагінгу та покращення.",
+        proj_bank: "Система управління банківским сховищем на C# з обробкою даних через LINQ та 100% покриттям unit-тестами.",
         proj_afterlight: "Сайт для сервера Minecraft. Кастомний дизайн, навігація, копіювання IP та лічильник онлайну.",
         proj_tense: "Інтерактивна платформа для вивчення часів англійської граматики з тестами.",
         proj_markt: "Динамічний сайт, інтегрований з онлайн-базою для роботи з даними в реальному часі.",
@@ -50,12 +48,11 @@ const translations = {
         footer_tagline: "Створимо щось круте разом."
     },
     pl: {
-        nav_about: "O mnie", nav_skills: "Umiejętności", nav_projects: "Projekty", nav_contact: "Kontakt",
+        nav_about: "O mnie", nav_projects: "Projekty", nav_contact: "Kontakt", nav_skills: "Stack technologiczny",
         label_portfolio: "Portfolio",
         status_open: "🚀 Otwarty na pracę i staże",
+        btn_contacts: "📬 Kontakty i inne linki",
         about_text: "Student informatyki stosowanej na DSW IDEIS z praktycznym doświadczeniem w Javie, C#, Pythonie i tworzeniu stron WWW. Tworzę mody do Minecrafta, boty na Discorda i strony internetowe. Czasami używam narzędzi AI (ChatGPT, Gemini, Claude) nie tylko do generowania kodu, ale także do jego analizy, debugowania i ulepszania.",
-        btn_email: "Napisz",
-        skill_web: "responsywny design", skill_java: "tworzenie modów", skill_cs: "projekty na uczelnię", skill_py: "boty na Discorda", skill_sql: "podstawy", skill_git: "kontrola wersji", skill_ai: "ChatGPT, Gemini, Claude",
         proj_bank: "System zarządzania skarbcem bankowym w C# z przetwarzaniem danych LINQ i 100% pokryciem testami jednostkowymi.",
         proj_afterlight: "Strona dla serwera Minecraft. Niestandardowy projekt, kopiowanie IP i licznik graczy online.",
         proj_tense: "Interaktywna platforma do nauki czasów w gramatyce angielskiej z quizami.",
@@ -95,10 +92,40 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
+document.querySelectorAll('.skill-tag').forEach(tag => {
+    const level = parseInt(tag.dataset.level) || 1;
+    const labels = ['Beginner', 'Basic', 'Intermediate', 'Pro'];
+    const tooltip = document.createElement('div');
+    tooltip.className = 'skill-tooltip';
+    tooltip.innerHTML = `
+        <div class="tooltip-labels"><span>Beginner</span><span>Pro</span></div>
+        <div class="tooltip-bar">${[1,2,3,4].map(i => `<div class="tooltip-segment ${i <= level ? 'filled' : ''}"></div>`).join('')}</div>
+        <div style="font-size:11px; color:var(--text-secondary); margin-top:6px; text-align:center;">${labels[level - 1]}</div>
+    `;
+    tag.appendChild(tooltip);
+});
+
+const headerName = document.querySelector('.header-name');
+const heroTitle = document.querySelector('h1.gradient-text');
+
+if (headerName && heroTitle) {
+    const titleObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                headerName.classList.add('visible');
+            } else {
+                headerName.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0, rootMargin: "-20px 0px 0px 0px" });
+
+    titleObserver.observe(heroTitle);
+}
+
 const revealElements = document.querySelectorAll('.reveal');
 const revealOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
+    threshold: 0.05,
+    rootMargin: "0px 0px -40px 0px"
 };
 
 const revealOnScroll = new IntersectionObserver(function(entries, observer) {
@@ -116,7 +143,7 @@ revealElements.forEach(el => {
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
-const particleCount = window.innerWidth < 600 ? 40 : 80;
+const particleCount = window.innerWidth < 600 ? 30 : 70;
 
 let mouse = { x: null, y: null, radius: 100 };
 window.addEventListener('mousemove', (e) => {
@@ -140,14 +167,12 @@ class Particle {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
     }
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
-
-        if (this.size < 0.2) this.size += 0.1;
 
         if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
         if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
@@ -160,15 +185,15 @@ class Particle {
                 const forceDirectionX = dx / distance;
                 const forceDirectionY = dy / distance;
                 const force = (mouse.radius - distance) / mouse.radius;
-                this.x -= forceDirectionX * force * 1;
-                this.y -= forceDirectionY * force * 1;
+                this.x -= forceDirectionX * force * 0.8;
+                this.y -= forceDirectionY * force * 0.8;
             }
         }
     }
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = currentTheme === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.2)';
+        ctx.fillStyle = currentTheme === 'dark' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.15)';
         ctx.fill();
     }
 }
@@ -189,7 +214,7 @@ function connectParticles() {
             
             if (distance < 120) {
                 let opacity = 1 - (distance / 120);
-                ctx.strokeStyle = currentTheme === 'dark' ? `rgba(255, 255, 255, ${opacity * 0.2})` : `rgba(0, 0, 0, ${opacity * 0.1})`;
+                ctx.strokeStyle = currentTheme === 'dark' ? `rgba(255, 255, 255, ${opacity * 0.15})` : `rgba(0, 0, 0, ${opacity * 0.08})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particles[a].x, particles[a].y);
