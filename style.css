@@ -25,9 +25,7 @@
     --accent-glow: rgba(255, 255, 255, 0.03);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html {scroll-behavior: smooth;}
 
 * {
     margin: 0;
@@ -66,9 +64,7 @@ header {
     transition: background-color var(--transition), border-color var(--transition);
 }
 
-[data-theme="dark"] header {
-    background: rgba(13, 13, 15, 0.7);
-}
+[data-theme="dark"] header {background: rgba(13, 13, 15, 0.7);}
 
 .header-container {
     position: relative;
@@ -153,9 +149,7 @@ nav ul {
     transition: all var(--transition);
 }
 
-.lang-btn:hover {
-    color: var(--text-primary);
-}
+.lang-btn:hover {color: var(--text-primary);}
 
 .lang-btn.active {
     background: var(--glass-bg);
@@ -330,9 +324,7 @@ body .moon-icon { display: none; }
     margin-bottom: 12px;
 }
 
-.skill-icons i {
-    margin-bottom: 0;
-}
+.skill-icons i {margin-bottom: 0;}
 
 .skill-tooltip {
     opacity: 0;
@@ -379,9 +371,7 @@ body .moon-icon { display: none; }
     background: var(--border);
 }
 
-.tooltip-segment.filled {
-    background: var(--text-primary);
-}
+.tooltip-segment.filled {background: var(--text-primary);}
 
 .tooltip-level-name {
     font-size: 12px;
@@ -391,9 +381,7 @@ body .moon-icon { display: none; }
     text-align: center;
 }
 
-#education {
-    margin-bottom: 80px;
-}
+#education {margin-bottom: 80px;}
 
 .edu-card {
     padding: 32px;
@@ -425,9 +413,7 @@ body .moon-icon { display: none; }
     border-radius: 20px;
 }
 
-[data-theme="dark"] .edu-date {
-    background: rgba(255,255,255,0.04);
-}
+[data-theme="dark"] .edu-date {background: rgba(255,255,255,0.04);}
 
 .edu-degree {
     font-size: 15px;
@@ -445,13 +431,9 @@ body .moon-icon { display: none; }
     margin-top: 8px;
 }
 
-[data-theme="dark"] .edu-goal {
-    background: rgba(255,255,255,0.02);
-}
+[data-theme="dark"] .edu-goal {background: rgba(255,255,255,0.02);}
 
-.goal-icon {
-    font-size: 24px;
-}
+.goal-icon {font-size: 24px;}
 
 .edu-goal p {
     font-size: 15px;
@@ -489,9 +471,7 @@ body .moon-icon { display: none; }
     text-decoration: none;
 }
 
-.project-card h3 a:hover {
-    text-decoration: underline;
-}
+.project-card h3 a:hover {text-decoration: underline;}
 
 .project-card p {
     font-size: 14px;
