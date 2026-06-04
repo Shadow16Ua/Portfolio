@@ -130,7 +130,9 @@ nav ul {
     transition: all var(--transition);
 }
 
-.lang-btn:hover {color: var(--text-primary);}
+.lang-btn:hover {
+    color: var(--text-primary);
+}
 
 .lang-btn.active {
     background: var(--glass-bg);
@@ -315,7 +317,9 @@ body .moon-icon { display: none; }
     text-decoration: none;
 }
 
-.project-card h3 a:hover {text-decoration: underline;}
+.project-card h3 a:hover {
+    text-decoration: underline;
+}
 
 .project-card p {
     font-size: 14px;
@@ -369,7 +373,9 @@ footer {
     margin: 0 auto;
 }
 
-footer h2 {display: none;}
+footer h2 {
+    display: none;
+}
 
 .footer-tagline {
     font-size: 16px;
@@ -387,7 +393,9 @@ footer h2 {display: none;}
     transition: color var(--transition);
 }
 
-.big-email:hover { color: var(--text-muted);}
+.big-email:hover {
+    color: var(--text-muted);
+}
 
 .social-links {
     display: flex;

@@ -22,6 +22,7 @@ const translations = {
     en: {
         nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
         label_portfolio: "Portfolio",
+        status_open: "🚀 Open to Work & Internships",
         about_text: "Computer science student at DSW IDEIS with hands-on experience in Java, C#, Python, and web development. I build Minecraft mods, Discord bots, and websites — mostly for fun, always learning something new. Sometimes I use AI tools (ChatGPT, Gemini, Claude) as part of my workflow — not just to generate code, but to understand, debug, and improve it.",
         btn_email: "Email",
         skill_web: "responsive design", skill_java: "Minecraft modding", skill_cs: "university coursework", skill_py: "Discord bots", skill_sql: "basics", skill_git: "version control", skill_ai: "ChatGPT, Gemini, Claude",
@@ -36,6 +37,7 @@ const translations = {
     uk: {
         nav_about: "Про мене", nav_skills: "Навички", nav_projects: "Проєкти", nav_contact: "Контакти",
         label_portfolio: "Портфоліо",
+        status_open: "🚀 Відкритий до роботи та стажувань",
         about_text: "Студент прикладної інформатики в DSW IDEIS з практичним досвідом у Java, C#, Python та веб-розробці. Створюю моди для Minecraft, Discord ботів та сайти — переважно для задоволення та постійного вивчення нового. Використовую ШІ (ChatGPT, Gemini, Claude) у своїй роботі не просто для генерації коду, а для його розуміння, дебагінгу та покращення.",
         btn_email: "Написати",
         skill_web: "адаптивний дизайн", skill_java: "моди для Minecraft", skill_cs: "університетські проєкти", skill_py: "Discord боти", skill_sql: "базовий рівень", skill_git: "контроль версій", skill_ai: "ChatGPT, Gemini, Claude",
@@ -50,6 +52,7 @@ const translations = {
     pl: {
         nav_about: "O mnie", nav_skills: "Umiejętności", nav_projects: "Projekty", nav_contact: "Kontakt",
         label_portfolio: "Portfolio",
+        status_open: "🚀 Otwarty na pracę i staże",
         about_text: "Student informatyki stosowanej na DSW IDEIS z praktycznym doświadczeniem w Javie, C#, Pythonie i tworzeniu stron WWW. Tworzę mody do Minecrafta, boty na Discorda i strony internetowe. Czasami używam narzędzi AI (ChatGPT, Gemini, Claude) nie tylko do generowania kodu, ale także do jego analizy, debugowania i ulepszania.",
         btn_email: "Napisz",
         skill_web: "responsywny design", skill_java: "tworzenie modów", skill_cs: "projekty na uczelnię", skill_py: "boty na Discorda", skill_sql: "podstawy", skill_git: "kontrola wersji", skill_ai: "ChatGPT, Gemini, Claude",
@@ -92,17 +95,22 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-document.querySelectorAll('.skill-tag').forEach(tag => {
-    const level = parseInt(tag.dataset.level) || 1;
-    const labels = ['Beginner', 'Basic', 'Intermediate', 'Pro'];
-    const tooltip = document.createElement('div');
-    tooltip.className = 'skill-tooltip';
-    tooltip.innerHTML = `
-        <div class="tooltip-labels"><span>Beginner</span><span>Pro</span></div>
-        <div class="tooltip-bar">${[1,2,3,4].map(i => `<div class="tooltip-segment ${i <= level ? 'filled' : ''}"></div>`).join('')}</div>
-        <div style="font-size:11px; color:var(--text-secondary); margin-top:6px; text-align:center;">${labels[level - 1]}</div>
-    `;
-    tag.appendChild(tooltip);
+const revealElements = document.querySelectorAll('.reveal');
+const revealOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+    });
+}, revealOptions);
+
+revealElements.forEach(el => {
+    revealOnScroll.observe(el);
 });
 
 const canvas = document.getElementById('particles');
@@ -126,26 +134,6 @@ function resizeCanvas() {
 }
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
-
-// Intersection Observer for reveal animations
-const revealElements = document.querySelectorAll('.reveal');
-const revealOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('active'); 
-        observer.unobserve(entry.target);     
-    });
-}, revealOptions);
-
-revealElements.forEach(el => {
-    revealOnScroll.observe(el);
-});
-
 
 class Particle {
     constructor() {
