@@ -582,6 +582,13 @@ footer {
     transform: translateY(0);
 }
 
+.skill-img {
+    width: 32px;    
+    height: 32px;
+    margin-bottom: 12px;
+    object-fit: contain; 
+}
+
 @media (max-width: 900px) {
     .hero-split { grid-template-columns: 1fr; gap: 48px; }
 }
