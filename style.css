@@ -367,6 +367,10 @@ body .moon-icon { display: none; }
     overflow: visible !important;
 }
 
+.devicon-github-original {
+    color: var(--text-primary) !important;
+}
+
 .skill-tag:hover {
     border-color: var(--text-primary);
     transform: translateY(-4px) scale(1.05);
