@@ -21,60 +21,54 @@ themeSwitch.addEventListener('click', () => {
 const translations = {
     en: {
         nav_about: "About", nav_projects: "Projects", nav_contact: "Contact", nav_skills: "Tech Stack", nav_edu: "Goals",
-        label_portfolio: "Portfolio",
         status_open: "🚀 Open to Work & Internships",
         btn_contacts: "📬 Contacts & Other links",
-        about_text: "Computer science student at DSW IDEIS with hands-on experience in Java, C#, Python, and web development. I build Minecraft mods, Discord bots, and websites — mostly for fun, always learning something new. Sometimes I use AI tools (ChatGPT, Gemini, Claude) as part of my workflow — not just to generate code, but to understand, debug, and improve it.",
-        skill_git: "GitHub",
+        about_text: "Computer science student at DSW IDEIS with hands-on experience in Java, C#, Python, and web development. I build Minecraft mods, Discord bots, and websites — mostly for fun, always learning something new. Sometimes I use AI tools (ChatGPT, Gemini, Claude) as part of my workflow — not just to generate code, but to understand, debug, and improve it. Currently, I am continuing to deeply study C# (independently and at the university), and I am also mastering JavaScript as part of my university studies.",
         edu_uni: "DSW IDEIS, Krakow",
         edu_date: "2025 — Present",
         edu_degree: "Applied Informatics — Completed 1st Year, starting 2nd Year",
-        edu_goal: "As a student of Applied Informatics, I am focused on bridging theoretical knowledge with practical challenges. I am currently seeking an internship or a Junior Developer position where I can contribute to meaningful projects, solve complex technical problems, and further develop my skills. I am highly motivated to deliver tangible results, gain hands-on professional experience, and demonstrate my dedication to high-standard engineering.",
+        edu_goal: "As a student of Applied Informatics, I am focused on bridging theoretical knowledge with practical challenges. I am currently seeking an internship or a Junior Developer position where I can contribute to meaningful projects, solve complex technical problems, and further develop my skills. I am highly motivated to deliver tangible results, gain hands-on professional experience, and demonstrate my dedication to a high-standard engineering culture.",
         proj_bank: "C# bank vault management system with LINQ data processing and 100% unit test coverage.",
         proj_afterlight: "Website for a Minecraft server. Custom design, navigation, server IP copy and online counter.",
         proj_tense: "Interactive platform for learning English grammar tenses with quizzes.",
         proj_markt: "Dynamic website integrated with an online database for real-time data.",
         proj_alert: "Python bot for Discord that sends air raid alerts via button interactions.",
-        proj_mods: "8 published mods, datapacks and resource packs with 1,100+ total downloads. Includes Safe Pets, Lava Detector and more.",
+        proj_mods: "8 published mods, datapacks and resource packs with 2,000+ total downloads. Includes Safe Pets, Lava Detector and more.",
         footer_tagline: "Let's build something awesome together."
     },
     uk: {
         nav_about: "Про мене", nav_projects: "Проєкти", nav_contact: "Контакти", nav_skills: "Стек технологій", nav_edu: "Цілі",
-        label_portfolio: "Портфоліо",
         status_open: "🚀 Відкритий до роботи та стажувань",
         btn_contacts: "📬 Контакти та інші посилання",
-        about_text: "Студент прикладної інформатики в DSW IDEIS з практичним досвідом у Java, C#, Python та веб-розробці. Створюю моди для Minecraft, Discord ботів та сайти — переважно для задоволення та постійного вивчення нового. Використовую ШІ (ChatGPT, Gemini, Claude) у своїй роботі не просто для генерації коду, а для його розуміння, дебагінгу та покращення.",
-        skill_git: "GitHub",
+        about_text: "Студент прикладної інформатики в DSW IDEIS з практичним досвідом у Java, C#, Python та веб-розробці. Створюю моди для Minecraft, Discord ботів та сайти — переважно для задоволення та постійного вивчення нового. Використовую ШІ (ChatGPT, Gemini, Claude) у своїй роботі не просто для генерації коду, а для його розуміння, дебагінгу та покращення. Зараз продовжую поглиблено вивчати C# (самостійно та в університеті), а також освоюю JavaScript в рамках університетської програми.",
         edu_uni: "DSW IDEIS, Краків",
         edu_date: "2025 — Поточний час",
-        edu_degree: "Прикладна інформатика — Закінчив 1-й курс, перехід на 2-й",
-        edu_goal: "Як студент прикладної інформатики, я зосереджений на інтеграції теоретичних знань із реальними бізнес-завданнями. Зараз я шукаю стажування або позицію Junior-розробника, де зможу робити вагомий внесок у проєкти, розв'язувати складні технічні задачі та професійно зростати. Моя мета — приносити користь команді, отримувати практичний досвід та дотримуватися високих стандартів розробки.",        
+        edu_degree: "Прикладна інформатика (Informatyka Stosowana) — Закінчив 1-й курс, перехід на 2-й",
+        edu_goal: "Як студент прикладної інформатики, я зосереджений на інтеграції теоретичних знань із реальними бізнес-завданнями. Зараз я шукаю стажування або позицію Junior-розробника, де зможу робити вагомий внесок у проєкти, розв'язувати складні технічні задачі та професійно зростати. Моя мета — приносити користь команді, отримувати практичний досвід та дотримуватися високих стандартів розробки.",
         proj_bank: "Система управління банківским сховищем на C# з обробкою даних через LINQ та 100% покриттям unit-тестами.",
         proj_afterlight: "Сайт для сервера Minecraft. Кастомний дизайн, навігація, копіювання IP та лічильник онлайну.",
         proj_tense: "Інтерактивна платформа для вивчення часів англійської граматики з тестами.",
         proj_markt: "Динамічний сайт, інтегрований з онлайн-базою для роботи з даними в реальному часі.",
         proj_alert: "Python-бот для Discord, який надсилає сповіщення про повітряну тривогу через взаємодію з кнопками.",
-        proj_mods: "8 опублікованих модів, датапаків та ресурспаків із 1100+ завантаженнями. Включає Safe Pets, Lava Detector тощо.",
+        proj_mods: "8 опублікованих модів, датапаків та ресурспаків із 2000+ завантаженнями. Включає Safe Pets, Lava Detector тощо.",
         footer_tagline: "Створимо щось круте разом."
     },
     pl: {
         nav_about: "O mnie", nav_projects: "Projekty", nav_contact: "Kontakt", nav_skills: "Stack technologiczny", nav_edu: "Cele",
-        label_portfolio: "Portfolio",
         status_open: "🚀 Otwarty na pracę i staże",
         btn_contacts: "📬 Kontakty i inne linki",
-        about_text: "Student informatyki stosowanej na DSW IDEIS z praktycznym doświadczeniem w Javie, C#, Pythonie i tworzeniu stron WWW. Tworzę mody do Minecrafta, boty na Discorda i strony internetowe. Czasami używam narzędzi AI (ChatGPT, Gemini, Claude) nie tylko do generowania kodu, ale także do jego analizy, debugowania i ulepszania.",
-        skill_git: "GitHub",
+        about_text: "Student informatyki stosowanej na DSW IDEIS z praktycznym doświadczeniem w Javie, C#, Pythonie i tworzeniu stron WWW. Tworzę mody do Minecrafta, boty na Discorda i strony internetowe. Czasami używam narzędzi AI (ChatGPT, Gemini, Claude) nie tylko do generowania kodu, ale także do jego analizy, debugowania i ulepszania. Obecnie nadal intensywnie studiuję C# (zarówno samodzielnie, jak i na uniwersytecie), a także opanowuję JavaScript w ramach studiów uniwersyteckich.",
         edu_uni: "DSW IDEIS, Kraków",
         edu_date: "2025 — Obecnie",
         edu_degree: "Informatyka Stosowana — Ukończony 1. rok, przejście na 2. rok",
-        edu_goal: "Jako student informatyki stosowanej skupiam się na łączeniu wiedzy teoretycznej z wyzwaniami praktycznymi. Aktywnie poszukuję stażu lub stanowiska Junior Developer, gdzie mógłbym wspierać zespół w tworzeniu wartościowych rozwiązań, mierzyć się z ambitnymi wyzwaniami technicznymi i rozwijać swoje kompetencje. Jestem zmotywowany do dostarczania realnych rezultatów i pracy zgodnie z wysokimi standardami inżynierskimi.",
+        edu_goal: "Jako student inżynierii oprogramowania skupiam się na łączeniu wiedzy teoretycznej z wyzwaniami praktycznymi. Aktywnie poszukuję stażu lub stanowiska Junior Developer, gdzie mógłbym wspierać zespół w tworzeniu wartościowych rozwiązań, mierzyć się z ambitnymi wyzwaniami technicznymi i rozwijać swoje kompetencje. Jestem zmotywowany do dostarczania realnych rezultatów i pracy zgodnie z wysokimi standardami inżynierskimi.",
         proj_bank: "System zarządzania skarbcem bankowym w C# z przetwarzaniem danych LINQ i 100% pokryciem testami jednostkowymi.",
         proj_afterlight: "Strona dla serwera Minecraft. Niestandardowy projekt, kopiowanie IP i licznik graczy online.",
         proj_tense: "Interaktywna platforma do nauki czasów w gramatyce angielskiej z quizami.",
         proj_markt: "Dynamiczna strona internetowa zintegrowana z bazą danych online.",
         proj_alert: "Bot w Pythonie na Discorda wysyłający alarmy przeciwlotnicze poprzez interakcje z przyciskami.",
-        proj_mods: "8 opublikowanych modów z ponad 1100 pobraniami (w tym m.in. Safe Pets).",
-        footer_tagline: "Stwórzmy coś niesamowitego razem."
+        proj_mods: "8 opublikowanych modów z ponad 2000+ pobraniami (w tym m.in. Safe Pets).",
+        footer_tagline: "Stwórzmy cośl niesamowitego razem."
     }
 };
 
@@ -149,10 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const revealElements = document.querySelectorAll('.reveal');
-const revealOptions = {
-    threshold: 0.05,
-    rootMargin: "0px 0px -40px 0px"
-};
+const revealOptions = { threshold: 0.05, rootMargin: "0px 0px -40px 0px" };
 
 const revealOnScroll = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
@@ -162,9 +153,7 @@ const revealOnScroll = new IntersectionObserver(function(entries, observer) {
     });
 }, revealOptions);
 
-revealElements.forEach(el => {
-    revealOnScroll.observe(el);
-});
+revealElements.forEach(el => { revealOnScroll.observe(el); });
 
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
