@@ -553,6 +553,7 @@ body .moon-icon { display: none; }
     border-radius: var(--radius);
     z-index: 1;
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
 }
 
 .project-card::before {
@@ -623,7 +624,7 @@ body:not([data-theme="dark"]) .project-card::before {
 .project-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
 .project-card h3 a { color: var(--text-primary); text-decoration: none; }
 .project-card h3 a:hover { text-decoration: underline; }
-.project-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1; }
+.project-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;}
 
 .project-meta {
     display: flex;
@@ -647,10 +648,12 @@ body:not([data-theme="dark"]) .project-card::before {
     background: rgba(255, 255, 255, 0.04);
 }
 
-.project-card video {
+.project-card video,
+.project-card img {
     width: 100%;
-    height: auto;
-    margin-top: auto;
+    height: 200px;        
+    object-fit: cover;    
+    margin-top: auto;     
     border-radius: 8px;
     border: 1px solid var(--border);
 }
