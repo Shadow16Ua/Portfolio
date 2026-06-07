@@ -43,7 +43,6 @@ body {
     transition: background-color var(--transition), color var(--transition);
 }
 
-/* ФОНОВІ ЧАСТИНКИ */
 #particles {
     position: fixed;
     top: 0;
@@ -207,7 +206,7 @@ body:not([data-theme="dark"]) .lang-picker:has(.lang-btn:hover) .lang-btn.active
     font-weight: 500;
 }
 
-/* ТЕМА */
+
 #theme-switch {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -233,7 +232,6 @@ body .moon-icon { display: none; }
 [data-theme="dark"] .sun-icon { display: none; }
 [data-theme="dark"] .moon-icon { display: block; }
 
-/* ОСНОВНІ КОНТЕЙНЕРИ */
 .main-container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -324,14 +322,11 @@ body .moon-icon { display: none; }
     margin-bottom: 24px;
 }
 
-/* =========================================
-   TECH STACK (НАВИЧКИ) - ОЧИЩЕНО ТА ЗБІЛЬШЕНО
-   ========================================= */
 
 .skills-grid {
     display: flex;
     flex-wrap: wrap; 
-    gap: 16px; /* Відстань трохи більша, щоб колонка була вищою */
+    gap: 16px; 
     justify-content: center;
     position: relative;
     z-index: 5;
@@ -341,7 +336,6 @@ body .moon-icon { display: none; }
     position: relative;
     cursor: default;
     
-    /* ЗБІЛЬШЕНА ВИСОТА */
     padding: 20px 18px; 
     min-height: 100px; /* Змушує картки бути об'ємнішими */
     
@@ -388,12 +382,10 @@ body .moon-icon { display: none; }
     object-fit: contain;
 }
 
-/* Фікс GitHub для темної теми */
 .devicon-github-original {
     color: var(--text-primary) !important;
 }
 
-/* Наведення: Плавна тінь та зміна кольору. Без стрибків. */
 .skill-tag:hover {
     border-color: var(--text-primary);
     box-shadow: 0 6px 20px var(--accent-glow);
@@ -401,7 +393,7 @@ body .moon-icon { display: none; }
     z-index: 99999 !important;
 }
 
-/* === ПІДКАЗКИ === */
+/* Підказки */
 .skill-tag .skill-tooltip {
     position: absolute !important;
     bottom: calc(100% + 12px) !important; 
@@ -428,7 +420,6 @@ body .moon-icon { display: none; }
     transform: translateX(-50%) translateY(0) scale(1) !important;
 }
 
-/* Внутрішність підказки */
 .tooltip-labels {
     display: flex;
     justify-content: space-between;
@@ -456,11 +447,6 @@ body .moon-icon { display: none; }
     margin-top: 8px;
     text-align: center;
 }
-
-
-/* =========================================
-   ІНШІ СЕКЦІЇ (ОСВІТА, ПРОЄКТИ)
-   ========================================= */
 
 #education {margin-bottom: 80px;}
 
@@ -606,7 +592,6 @@ footer {
 }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* АДАПТИВНІСТЬ */
 @media (max-width: 900px) {
     .hero-split { grid-template-columns: 1fr; gap: 48px; }
 }
