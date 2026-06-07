@@ -20,6 +20,8 @@ themeSwitch.addEventListener('click', () => {
 
 const translations = {
     en: {
+        admin_title: "Management & Administration Experience",
+        admin_text: "Successfully managing and administering a game server both in-game and on Discord. Leading and curating the moderation team, configuring server hosting, permission systems (LuckPerms), and maintaining community guidelines.",
         nav_about: "About", nav_projects: "Projects", nav_contact: "Contact", nav_skills: "Tech Stack", nav_edu: "Goals",
         status_open: "🚀 Open to Work & Internships",
         btn_contacts: "📬 Contacts & Other links",
@@ -37,6 +39,8 @@ const translations = {
         footer_tagline: "Let's build something awesome together."
     },
     uk: {
+        admin_title: "Досвід менеджменту та адміністрування",
+        admin_text: "Успішно адмініструю та керую ігровим сервером як безпосередньо у грі, так і в Discord. Займаюся кураторством команди модерації, налаштуванням хостингу, систем прав (LuckPerms) та підтримкою правил спільноти.",
         nav_about: "Про мене", nav_projects: "Проєкти", nav_contact: "Контакти", nav_skills: "Стек технологій", nav_edu: "Цілі",
         status_open: "🚀 Відкритий до роботи та стажувань",
         btn_contacts: "📬 Контакти та інші посилання",
@@ -55,6 +59,8 @@ const translations = {
         footer_tagline: "Створимо щось круте разом."
     },
     pl: {
+        admin_title: "Doświadczenie w zarządzaniu i administracji",
+        admin_text: "Z powodzeniem zarządzam i administruję serwerem gier zarówno w grze, jak i na Discordzie. Zajmuję się kuratorstwem zespołu moderacji, konfiguracją hostingu, systemów uprawnień (LuckPerms) oraz utrzymaniem porządku w społeczności.",
         nav_about: "O mnie", nav_projects: "Projekty", nav_contact: "Kontakt", nav_skills: "Stack technologiczny", nav_edu: "Cele",
         status_open: "🚀 Otwarty na pracę i staże",
         btn_contacts: "📬 Kontakty i inne linki",

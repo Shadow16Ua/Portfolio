@@ -342,7 +342,6 @@ body .moon-icon { display: none; }
     position: relative;
     z-index: 5;
 }
-
 .glass-card {
     background: var(--surface);
     backdrop-filter: blur(16px);
@@ -352,19 +351,19 @@ body .moon-icon { display: none; }
 }
 
 .skill-tag {
-        position: relative;
+    position: relative;
     cursor: default;
     padding: 24px 16px;
     font-size: 14px;
     font-weight: 500;
     color: var(--text-primary);
-    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: visible !important;
+    overflow: visible !important; 
 }
 
 .devicon-github-original {
@@ -395,47 +394,57 @@ body .moon-icon { display: none; }
 .skill-icons i {margin-bottom: 0;}
 
 .skill-tooltip {
-    opacity: 0;
-    visibility: hidden;
     position: absolute;
-    left: 50%;
+    bottom: calc(100% + 10px); 
+    left: 30%; 
+    
+    width: 170px; 
+    min-width: 170px;
+    
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 8px 12px; /* Ще трохи компактніше */
-    width: 150px;       /* Оптимальна ширина, щоб не розпирало */
-    z-index: 99999 !important; 
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, visibility 0.2s ease;
+    padding: 12px;
+    
+    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
+    z-index: 99999 !important; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    
+    transform: translateY(10px) translateX(-10px) scale(0.95);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, visibility 0.2s ease;
 }
 
-/* Підіймаємо поточну картку над іншими при наведенні */
+.skill-tag:hover .skill-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
 .skill-tag:hover {
     z-index: 9999 !important;
 }
 
-/* 1. ДЛЯ ВЕРХНІХ ТРЬОХ КАРТОК (HTML, Java, C#) -> ПРИТИСКАЄМО НИЖЧЕ, ЩОБ НЕ ЙШЛО ПІД МЕНЮ */
-.skill-tag:nth-child(-n+3) .skill-tooltip {
-    /* Зменшили до +2px — тепер підказка сяде впритул до картки і опуститься ДАЛІ від верхнього меню */
+.skill-tag:nth-child(-n+5) .skill-tooltip {
     bottom: calc(100% + 10px); 
     transform: translateX(-50%) translateY(8px) scale(0.95);
 }
 
 /* Анімація появи для верхніх */
-.skill-tag:nth-child(-n+3):hover .skill-tooltip {
+.skill-tag:nth-child(-n+5):hover .skill-tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0) scale(1);
 }
 
 
-.skill-tag:nth-child(n+4) .skill-tooltip {
+.skill-tag:nth-child(n+6) .skill-tooltip {
     top: calc(100% + 10px);
     transform: translateX(-50%) translateY(-8px) scale(0.95);
 }
 
-.skill-tag:nth-child(n+4):hover .skill-tooltip {
+.skill-tag:nth-child(n+6):hover .skill-tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0) scale(1);
@@ -448,6 +457,7 @@ body .moon-icon { display: none; }
     font-weight: 500;
     color: var(--text-muted);
     margin-bottom: 8px;
+    white-space: nowrap; 
 }
 
 .tooltip-bar {
@@ -764,4 +774,129 @@ footer {
     .controls { position: relative; right: auto; justify-content: center; }
     .main-container { padding: 40px 16px; }
     .projects-grid { grid-template-columns: 1fr; }
+}
+
+
+.skill-tag:hover {
+    z-index: 99999 !important;
+}
+
+/* === 1. ІДЕАЛЬНО РІВНА СІТКА (5 зверху, 5 знизу) === */
+.skills-grid {
+    display: grid;
+    /* Жорстко фіксуємо 5 однакових колонок на комп'ютері */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 16px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Адаптивність: на планшеті 3 колонки, на телефоні 2 */
+@media (max-width: 900px) {
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+
+
+
+/* === 1. ОРГАНІЧНА СІТКА === */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 14px; /* Трохи збільшили відстань (було 12) */
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* === 2. КАРТКА: ЗОЛОТА СЕРЕДИНА РОЗМІРУ ТА ПЛАВНОСТІ === */
+.skill-tag {
+    position: relative;
+    cursor: default;
+    padding: 18px 16px; /* Трохи додали "повітря" всередині */
+    
+    flex: 1 1 auto;
+    min-width: 125px; /* Зробили ширшими, ніж мінімальні */
+    max-width: 200px; 
+    
+    font-size: 14px; /* Повернули нормальний читабельний шрифт */
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: visible !important; 
+    
+    /* ПЛАВНІСТЬ: 0.3 секунди на будь-які зміни (включається і туди, і назад) */
+    transition: all 0.3s ease;
+}
+
+/* Іконки теж трошки збільшили для балансу */
+.skill-tag i {
+    font-size: 26px; 
+    margin-bottom: 10px; 
+}
+.skill-icons {
+    gap: 6px;
+    margin-bottom: 10px;
+}
+.skill-img {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 10px;
+}
+
+.skill-tag > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* При наведенні: плавно з'являється тінь і підсвічується контур, без різких стрибків */
+.skill-tag:hover {
+    border-color: var(--text-primary);
+    box-shadow: 0 6px 20px var(--accent-glow);
+    background: var(--surface) !important;
+    z-index: 99999 !important;
+}
+
+/* === 3. ПІДКАЗКА (ТЕЖ ІЗ ПЛАВНИМ ФЕЙДОМ) === */
+.skill-tag .skill-tooltip {
+    position: absolute !important;
+    bottom: calc(100% + 10px) !important; 
+    left: 50% !important; 
+    width: 170px !important; 
+    min-width: 170px !important;
+    background: var(--bg) !important; 
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none; 
+    z-index: 999999 !important; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+    
+    transform: translateX(-50%) translateY(8px) scale(0.95) !important;
+    /* Плавність для самої підказки збільшена до 0.3s */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+.skill-tag:hover .skill-tooltip {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+}
+
+.skill-tooltip .tooltip-labels {
+    white-space: nowrap !important;
 }
