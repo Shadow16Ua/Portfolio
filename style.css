@@ -43,6 +43,17 @@ body {
     transition: background-color var(--transition), color var(--transition);
 }
 
+/* ФОНОВІ ЧАСТИНКИ */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -120,6 +131,7 @@ nav ul {
     align-items: center;
 }
 
+/* МОВИ */
 .lang-picker {
     display: flex;
     background: var(--surface);
@@ -157,11 +169,6 @@ nav ul {
 .lang-btn:hover {
     transform: scale(1.1);
     background: var(--glass-bg); 
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-size: 200% !important;
-    animation: textShimmer 2.5s linear infinite;
-    
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.67), inset 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
@@ -174,37 +181,23 @@ nav ul {
 }
 
 .lang-btn[data-value="en"]:hover,
-.lang-btn[data-value="en"].active {
-    background-image: linear-gradient(90deg, #00247d, #cf142b, #00247d) !important;
-}
-
+.lang-btn[data-value="en"].active { background-image: linear-gradient(90deg, #00247d, #cf142b, #00247d) !important; }
 .lang-btn[data-value="uk"]:hover,
-.lang-btn[data-value="uk"].active {
-    background-image: linear-gradient(90deg, #0057b7, #ffd700, #0057b7) !important;
-}
-
+.lang-btn[data-value="uk"].active { background-image: linear-gradient(90deg, #0057b7, #ffd700, #0057b7) !important; }
 .lang-btn[data-value="pl"]:hover,
-.lang-btn[data-value="pl"].active {
-    background-image: linear-gradient(90deg, #a8a8a8, #dc143c, #a8a8a8) !important;
-}
+.lang-btn[data-value="pl"].active { background-image: linear-gradient(90deg, #a8a8a8, #dc143c, #a8a8a8) !important; }
 
 .lang-btn.active {
     background: var(--glass-bg);
     color: var(--text-primary) !important;
     background-image: none !important; 
     font-weight: 600; 
-    
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.67), inset 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 body:not([data-theme="dark"]) .lang-btn:hover,
-body:not([data-theme="dark"]) .lang-btn.active {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
-}
-
-body:not([data-theme="dark"]) .lang-btn.active:hover {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-}
+body:not([data-theme="dark"]) .lang-btn.active { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important; }
+body:not([data-theme="dark"]) .lang-btn.active:hover { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.08) !important; }
 
 body:not([data-theme="dark"]) .lang-picker:has(.lang-btn:hover) .lang-btn.active:not(:hover) {
     background: none !important;
@@ -214,7 +207,7 @@ body:not([data-theme="dark"]) .lang-picker:has(.lang-btn:hover) .lang-btn.active
     font-weight: 500;
 }
 
-
+/* ТЕМА */
 #theme-switch {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -234,23 +227,19 @@ body:not([data-theme="dark"]) .lang-picker:has(.lang-btn:hover) .lang-btn.active
     transform: rotate(15deg) scale(1.1);
 }
 
-#theme-switch svg {
-    width: 16px;
-    height: 16px;
-}
-
+#theme-switch svg { width: 16px; height: 16px; }
 body .sun-icon { display: block; }
 body .moon-icon { display: none; }
 [data-theme="dark"] .sun-icon { display: none; }
 [data-theme="dark"] .moon-icon { display: block; }
 
+/* ОСНОВНІ КОНТЕЙНЕРИ */
 .main-container {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 60px 24px;
     position: relative; 
-    z-index: 1;
-    
+    z-index: 2;
 }
 
 .hero-split {
@@ -335,121 +324,111 @@ body .moon-icon { display: none; }
     margin-bottom: 24px;
 }
 
+/* =========================================
+   TECH STACK (НАВИЧКИ) - ОЧИЩЕНО ТА ЗБІЛЬШЕНО
+   ========================================= */
+
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px; /* Відстань трохи більша, щоб колонка була вищою */
+    justify-content: center;
     position: relative;
     z-index: 5;
-}
-.glass-card {
-    background: var(--surface);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
 }
 
 .skill-tag {
     position: relative;
     cursor: default;
-    padding: 24px 16px;
-    font-size: 14px;
+    
+    /* ЗБІЛЬШЕНА ВИСОТА */
+    padding: 20px 18px; 
+    min-height: 100px; /* Змушує картки бути об'ємнішими */
+    
+    flex: 1 1 auto;
+    min-width: 130px; 
+    max-width: 200px; 
+    
+    font-size: 14px; 
     font-weight: 500;
     color: var(--text-primary);
-    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: visible !important; 
+    
+    transition: all 0.3s ease;
 }
 
+.skill-tag > * {
+    position: relative;
+    z-index: 1;
+}
+
+.skill-tag i {
+    font-size: 28px; 
+    margin-bottom: 12px; 
+}
+.skill-icons {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+    justify-content: center;
+}
+.skill-img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 12px;
+    object-fit: contain;
+}
+
+/* Фікс GitHub для темної теми */
 .devicon-github-original {
     color: var(--text-primary) !important;
 }
 
+/* Наведення: Плавна тінь та зміна кольору. Без стрибків. */
 .skill-tag:hover {
     border-color: var(--text-primary);
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 8px 24px var(--accent-glow);
-    background: var(--surface) !important; 
-    z-index: 9999 !important;
+    box-shadow: 0 6px 20px var(--accent-glow);
+    background: var(--surface) !important;
+    z-index: 99999 !important;
 }
 
-.skill-icons {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 12px;
-    justify-content: center;
-}
-
-.skill-tag i {
-    font-size: 28px;
-    display: block;
-    margin-bottom: 12px;
-}
-
-.skill-icons i {margin-bottom: 0;}
-
-.skill-tooltip {
-    position: absolute;
-    bottom: calc(100% + 10px); 
-    left: 30%; 
-    
-    width: 170px; 
-    min-width: 170px;
-    
-    background: var(--surface);
+/* === ПІДКАЗКИ === */
+.skill-tag .skill-tooltip {
+    position: absolute !important;
+    bottom: calc(100% + 12px) !important; 
+    left: 50% !important; 
+    width: 170px !important; 
+    min-width: 170px !important;
+    background: var(--bg) !important; 
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 12px;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none; 
+    z-index: 999999 !important; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
     
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 99999 !important; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    
-    transform: translateY(10px) translateX(-10px) scale(0.95);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, visibility 0.2s ease;
+    transform: translateX(-50%) translateY(8px) scale(0.95) !important;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease !important;
 }
 
 .skill-tag:hover .skill-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
 }
 
-.skill-tag:hover {
-    z-index: 9999 !important;
-}
-
-.skill-tag:nth-child(-n+5) .skill-tooltip {
-    bottom: calc(100% + 10px); 
-    transform: translateX(-50%) translateY(8px) scale(0.95);
-}
-
-/* Анімація появи для верхніх */
-.skill-tag:nth-child(-n+5):hover .skill-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0) scale(1);
-}
-
-
-.skill-tag:nth-child(n+6) .skill-tooltip {
-    top: calc(100% + 10px);
-    transform: translateX(-50%) translateY(-8px) scale(0.95);
-}
-
-.skill-tag:nth-child(n+6):hover .skill-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0) scale(1);
-}
-
+/* Внутрішність підказки */
 .tooltip-labels {
     display: flex;
     justify-content: space-between;
@@ -457,23 +436,19 @@ body .moon-icon { display: none; }
     font-weight: 500;
     color: var(--text-muted);
     margin-bottom: 8px;
-    white-space: nowrap; 
+    white-space: nowrap !important;
 }
-
 .tooltip-bar {
     display: flex;
     gap: 4px;
 }
-
 .tooltip-segment {
     flex: 1;
     height: 6px;
     border-radius: 3px;
     background: var(--border);
 }
-
-.tooltip-segment.filled {background: var(--text-primary);}
-
+.tooltip-segment.filled { background: var(--text-primary); }
 .tooltip-level-name {
     font-size: 12px;
     font-weight: 500;
@@ -481,6 +456,11 @@ body .moon-icon { display: none; }
     margin-top: 8px;
     text-align: center;
 }
+
+
+/* =========================================
+   ІНШІ СЕКЦІЇ (ОСВІТА, ПРОЄКТИ)
+   ========================================= */
 
 #education {margin-bottom: 80px;}
 
@@ -503,13 +483,7 @@ body .moon-icon { display: none; }
     flex-wrap: wrap;
     gap: 12px;
 }
-
-.edu-header h3 {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
+.edu-header h3 { font-size: 20px; font-weight: 500; color: var(--text-primary); }
 .edu-date {
     font-family: 'DM Mono', monospace;
     font-size: 13px;
@@ -518,13 +492,8 @@ body .moon-icon { display: none; }
     padding: 4px 10px;
     border-radius: 20px;
 }
-
 [data-theme="dark"] .edu-date {background: rgba(255,255,255,0.04);}
-
-.edu-degree {
-    font-size: 15px;
-    color: var(--text-primary);
-}
+.edu-degree { font-size: 15px; color: var(--text-primary); }
 
 .edu-goal {
     display: flex;
@@ -536,16 +505,9 @@ body .moon-icon { display: none; }
     border: 1px solid var(--border);
     margin-top: 8px;
 }
-
 [data-theme="dark"] .edu-goal {background: rgba(255,255,255,0.02);}
-
 .goal-icon {font-size: 24px;}
-
-.edu-goal p {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
+.edu-goal p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
 
 .projects-grid {
     display: grid;
@@ -567,63 +529,26 @@ body .moon-icon { display: none; }
 }
 
 .project-card::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    background: linear-gradient(60deg, 
-        rgba(255, 255, 255, 0.4), 
-        rgba(255, 255, 255, 1), 
-        rgba(255, 255, 255, 0.4), 
-        rgba(255, 255, 255, 1), 
-        rgba(255, 255, 255, 0.4)
-    );
-    background-size: 400%;
-    z-index: -2;
-    filter: blur(6px);
-    border-radius: calc(var(--radius) + 2px);
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+    content: ''; position: absolute; top: -3px; left: -3px; width: calc(100% + 6px); height: calc(100% + 6px);
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+    background-size: 400%; z-index: -2; filter: blur(6px); border-radius: calc(var(--radius) + 2px); opacity: 0; transition: opacity 0.6s ease-in-out;
 }
-
 body:not([data-theme="dark"]) .project-card::before {
-    background: linear-gradient(60deg, 
-        rgba(0, 0, 0, 0.1), 
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.1), 
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.1)
-    );
+    background: linear-gradient(60deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
     background-size: 400%;
 }
 
 .project-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--surface);
-    border-radius: var(--radius);
-    z-index: -1;
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--surface); border-radius: var(--radius); z-index: -1;
 }
 
 .project-card:hover {
-    /* Додано !important, щоб подолати конфлікт з класом .reveal.active */
     transform: scale(1.03) translateY(-4px) !important; 
     border-color: transparent;
     box-shadow: 0 15px 35px var(--accent-glow);
     z-index: 10;
 }
-
-.project-card:hover::before {
-    opacity: 1;
-    /* ЩЕ ПОВІЛЬНІШЕ: 30 секунд на одне повне коло */
-    animation: glowingEdges 30s linear infinite;
-}
+.project-card:hover::before { opacity: 1; animation: glowingEdges 30s linear infinite; }
 
 @keyframes glowingEdges {
     0% { background-position: 0 0; }
@@ -636,98 +561,38 @@ body:not([data-theme="dark"]) .project-card::before {
 .project-card h3 a:hover { text-decoration: underline; }
 .project-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;}
 
-.project-meta {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-}
-
+.project-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
 .tech-badge {
-    font-size: 12px;
-    font-weight: 500;
-    font-family: 'DM Mono', monospace;
-    color: var(--text-secondary);
-    background: rgba(0, 0, 0, 0.04);
-    border: 1px solid var(--border);
-    padding: 4px 10px;
-    border-radius: 6px;
+    font-size: 12px; font-weight: 500; font-family: 'DM Mono', monospace; color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.04); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px;
 }
-
-[data-theme="dark"] .tech-badge {
-    background: rgba(255, 255, 255, 0.04);
-}
+[data-theme="dark"] .tech-badge { background: rgba(255, 255, 255, 0.04); }
 
 .project-card video,
 .project-card img {
-    width: 100%;
-    height: 200px;        
-    object-fit: cover;    
-    margin-top: auto;     
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    width: 100%; height: 200px; object-fit: cover; margin-top: auto; border-radius: 8px; border: 1px solid var(--border);
 }
 
 footer {
-    padding: 48px 24px;
-    text-align: center;
-    border-top: 1px solid var(--border);
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    margin-top: 60px;
-    position: relative; 
-    z-index: 1;
+    padding: 48px 24px; text-align: center; border-top: 1px solid var(--border); background: var(--glass-bg);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); margin-top: 60px; position: relative; z-index: 2;
 }
 
-.footer-content {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.footer-tagline {
-    font-size: 16px;
-    color: var(--text-secondary);
-    margin-bottom: 16px;
-}
-
+.footer-content { max-width: var(--max-width); margin: 0 auto; }
+.footer-tagline { font-size: 16px; color: var(--text-secondary); margin-bottom: 16px; }
 .big-email {
-    font-size: clamp(22px, 4vw, 32px);
-    font-weight: 500;
-    color: var(--text-primary);
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 32px;
-    transition: color var(--transition);
+    font-size: clamp(22px, 4vw, 32px); font-weight: 500; color: var(--text-primary); text-decoration: none;
+    display: inline-block; margin-bottom: 32px; transition: color var(--transition);
 }
+.big-email:hover { color: var(--text-muted); }
 
-.big-email:hover {
-    color: var(--text-muted);
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
+.social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .social-links a {
-    padding: 8px 24px;
-    border-radius: 30px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all var(--transition);
+    padding: 8px 24px; border-radius: 30px; border: 1px solid var(--border); background: var(--surface);
+    color: var(--text-primary); text-decoration: none; font-size: 14px; font-weight: 500; transition: all var(--transition);
 }
 
-.social-links a:hover {
-    transform: scale(1.08);
-}
-
+.social-links a:hover { transform: scale(1.08); }
 .social-links a:active { transform: scale(0.92); }
 .github-link:hover { background: #333; color: #fff !important; border-color: #333; box-shadow: 0 0 15px rgba(51,51,51,0.4); }
 [data-theme="dark"] .github-link:hover { background: #fff; color: #000 !important; border-color: #fff; box-shadow: 0 0 15px rgba(255,255,255,0.4); }
@@ -736,37 +601,15 @@ footer {
 .discord-link:hover { background: #5865F2; color: #fff !important; border-color: #5865F2; box-shadow: 0 0 15px rgba(88,101,242,0.4); }
 
 .reveal {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.skill-img {
-    width: 32px;    
-    height: 32px;
-    margin-bottom: 12px;
-    object-fit: contain; 
-}
-
-#particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    pointer-events: none;
-}
-
+/* АДАПТИВНІСТЬ */
 @media (max-width: 900px) {
     .hero-split { grid-template-columns: 1fr; gap: 48px; }
 }
-
 @media (max-width: 650px) {
     .gradient-text { font-size: 36px; }
     .header-container { flex-direction: column; gap: 16px; padding: 16px; height: auto; }
@@ -774,129 +617,4 @@ footer {
     .controls { position: relative; right: auto; justify-content: center; }
     .main-container { padding: 40px 16px; }
     .projects-grid { grid-template-columns: 1fr; }
-}
-
-
-.skill-tag:hover {
-    z-index: 99999 !important;
-}
-
-/* === 1. ІДЕАЛЬНО РІВНА СІТКА (5 зверху, 5 знизу) === */
-.skills-grid {
-    display: grid;
-    /* Жорстко фіксуємо 5 однакових колонок на комп'ютері */
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 16px;
-    position: relative;
-    z-index: 5;
-}
-
-/* Адаптивність: на планшеті 3 колонки, на телефоні 2 */
-@media (max-width: 900px) {
-    .skills-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 600px) {
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-
-
-
-
-/* === 1. ОРГАНІЧНА СІТКА === */
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 14px; /* Трохи збільшили відстань (було 12) */
-    justify-content: center;
-    position: relative;
-    z-index: 5;
-}
-
-/* === 2. КАРТКА: ЗОЛОТА СЕРЕДИНА РОЗМІРУ ТА ПЛАВНОСТІ === */
-.skill-tag {
-    position: relative;
-    cursor: default;
-    padding: 18px 16px; /* Трохи додали "повітря" всередині */
-    
-    flex: 1 1 auto;
-    min-width: 125px; /* Зробили ширшими, ніж мінімальні */
-    max-width: 200px; 
-    
-    font-size: 14px; /* Повернули нормальний читабельний шрифт */
-    font-weight: 500;
-    color: var(--text-primary);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: visible !important; 
-    
-    /* ПЛАВНІСТЬ: 0.3 секунди на будь-які зміни (включається і туди, і назад) */
-    transition: all 0.3s ease;
-}
-
-/* Іконки теж трошки збільшили для балансу */
-.skill-tag i {
-    font-size: 26px; 
-    margin-bottom: 10px; 
-}
-.skill-icons {
-    gap: 6px;
-    margin-bottom: 10px;
-}
-.skill-img {
-    width: 26px;
-    height: 26px;
-    margin-bottom: 10px;
-}
-
-.skill-tag > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* При наведенні: плавно з'являється тінь і підсвічується контур, без різких стрибків */
-.skill-tag:hover {
-    border-color: var(--text-primary);
-    box-shadow: 0 6px 20px var(--accent-glow);
-    background: var(--surface) !important;
-    z-index: 99999 !important;
-}
-
-/* === 3. ПІДКАЗКА (ТЕЖ ІЗ ПЛАВНИМ ФЕЙДОМ) === */
-.skill-tag .skill-tooltip {
-    position: absolute !important;
-    bottom: calc(100% + 10px) !important; 
-    left: 50% !important; 
-    width: 170px !important; 
-    min-width: 170px !important;
-    background: var(--bg) !important; 
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 12px;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none; 
-    z-index: 999999 !important; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
-    
-    transform: translateX(-50%) translateY(8px) scale(0.95) !important;
-    /* Плавність для самої підказки збільшена до 0.3s */
-    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease !important;
-}
-
-.skill-tag:hover .skill-tooltip {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(-50%) translateY(0) scale(1) !important;
-}
-
-.skill-tooltip .tooltip-labels {
-    white-space: nowrap !important;
 }
