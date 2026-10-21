@@ -21,7 +21,7 @@ themeSwitch.addEventListener('click', () => {
 const translations = {
     en: {
         nav_about: "About", nav_exp: "Experience", nav_edu: "Education", nav_projects: "Projects", nav_skills: "Tech Stack",
-        status_open: "🚀 Open to Internship / Part-Time (15–20h/w) in Poland",
+        status_open: "🚀 Open to Internship / Part-Time (20+h/w) in Poland",
         btn_cv: "📄 Download CV (PDF)",
         btn_contacts: "📬 Contacts & Links",
         about_text: "Applied Informatics (B.Eng.) student at DSW IDEIS (WSEI) in Kraków with full legal right to work in Poland. Hands-on experience in C#/.NET, Java, JavaScript, SQL/Supabase, and Linux server reliability. I combine academic knowledge of data structures and OOP with practical AI-assisted engineering workflows, code debugging, and web development.",
@@ -61,7 +61,7 @@ const translations = {
     },
     uk: {
         nav_about: "Про мене", nav_exp: "Досвід", nav_edu: "Освіта", nav_projects: "Проєкти", nav_skills: "Стек технологій",
-        status_open: "🚀 Відкритий до стажування / Part-Time (15–20 год/тиж) у Польщі",
+        status_open: "🚀 Відкритий до стажування / Part-Time (20+ год/тиж) у Польщі",
         btn_cv: "📄 Завантажити CV (PDF)",
         btn_contacts: "📬 Контакти та посилання",
         about_text: "Студент 2-го курсу прикладної інформатики (B.Eng.) в DSW IDEIS (WSEI) у Кракові з повним правом на роботу в Польщі. Маю практичний досвід у C#/.NET, Java, JavaScript, SQL/Supabase та адмініструванні Linux-серверів. Поєдную академічну базу (структури даних, ООП) із сучасними AI-інструментами розробки, налагодженням коду та створенням вебдодатків.",
@@ -101,7 +101,7 @@ const translations = {
     },
     pl: {
         nav_about: "O mnie", nav_exp: "Doświadczenie", nav_edu: "Edukacja", nav_projects: "Projekty", nav_skills: "Stack technologiczny",
-        status_open: "🚀 Otwarty na staż / Part-Time (15–20h/tyg.) w Polsce",
+        status_open: "🚀 Otwarty na staż / Part-Time (20+h/tyg.) w Polsce",
         btn_cv: "📄 Pobierz CV (PDF)",
         btn_contacts: "📬 Kontakt i linki",
         about_text: "Student 2. roku Informatyki Stosowanej (inż.) na DSW IDEIS (WSEI) w Krakowie z pełnym prawem do pracy w Polsce. Posiadam praktyczne doświadczenie w C#/.NET, Javie, JavaScript, SQL/Supabase oraz administracji serwerami Linux. Łączę wiedzę akademicką (struktury danych, OOP) z nowoczesnymi narzędziami AI, debugowaniem kodu i tworzeniem aplikacji webowych.",
