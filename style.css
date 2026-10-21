@@ -592,6 +592,46 @@ footer {
 }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
+/* Додаткові стилі для досвіду, сертифікатів та кнопки CV */
+.primary-pill {
+    background: var(--text-primary);
+    color: var(--bg);
+    border-color: var(--text-primary);
+}
+
+.primary-pill:hover {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.certs-langs-split {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .certs-langs-split {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 900px) {
     .hero-split { grid-template-columns: 1fr; gap: 48px; }
 }

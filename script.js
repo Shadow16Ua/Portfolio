@@ -20,72 +20,135 @@ themeSwitch.addEventListener('click', () => {
 
 const translations = {
     en: {
-        admin_title: "Management & Administration Experience",
-        admin_text: "Successfully managing and administering a game server both in-game and on Discord. Leading and curating the moderation team, configuring server hosting, permission systems (LuckPerms), and maintaining community guidelines.",
-        nav_about: "About", nav_projects: "Projects", nav_contact: "Contact", nav_skills: "Tech Stack", nav_edu: "Goals",
-        status_open: "🚀 Open to Work & Internships",
-        btn_contacts: "📬 Contacts & Other links",
-        about_text: "Computer science student at DSW IDEIS with hands-on experience in Java, C#, Python, and web development. I build Minecraft mods, Discord bots, and websites — mostly for fun, always learning something new. Sometimes I use AI tools (ChatGPT, Gemini, Claude) as part of my workflow — not just to generate code, but to understand, debug, and improve it. Currently, I am continuing to deeply study C# (independently and at the university), and I am also mastering JavaScript as part of my university studies.",
-        edu_uni: "DSW IDEIS, Krakow",
-        edu_date: "2025 — Present",
-        edu_degree: "Applied Informatics — Completed 1st Year, starting 2nd Year",
-        edu_goal: "As a student of Applied Informatics, I am focused on bridging theoretical knowledge with practical challenges. I am currently seeking an internship or a Junior Developer position where I can contribute to meaningful projects, solve complex technical problems, and further develop my skills. I am highly motivated to deliver tangible results, gain hands-on professional experience, and demonstrate my dedication to a high-standard engineering culture.",
-        proj_university: "A collection of academic projects, laboratory works, and practical assignments developed during my university studies, focusing on programming logic, data structures, and algorithms.",
-        proj_afterlight: "Website for a Minecraft server. Custom design, navigation, server IP copy and online counter.",
-        proj_tense: "Interactive platform for learning English grammar tenses with quizzes.",
-        proj_markt: "Dynamic website integrated with an online database for real-time data.",
-        proj_alert: "Python bot for Discord that sends air raid alerts via button interactions.",
-        proj_mods: "8 published mods, datapacks and resource packs with 2,000+ total downloads. Includes Safe Pets, Lava Detector and more.",
+        nav_about: "About", nav_exp: "Experience", nav_edu: "Education", nav_projects: "Projects", nav_skills: "Tech Stack",
+        status_open: "🚀 Open to Internship / Part-Time (15–20h/w) in Poland",
+        btn_cv: "📄 Download CV (PDF)",
+        btn_contacts: "📬 Contacts & Links",
+        about_text: "Applied Informatics (B.Eng.) student at DSW IDEIS (WSEI) in Kraków with full legal right to work in Poland. Hands-on experience in C#/.NET, Java, JavaScript, SQL/Supabase, and Linux server reliability. I combine academic knowledge of data structures and OOP with practical AI-assisted engineering workflows, code debugging, and web development.",
+        exp1_role: "AI Data Annotation Specialist — TSMG Holding",
+        exp1_date: "Aug 2026 — Present",
+        exp1_type: "Freelance / Remote",
+        exp1_desc: "Transcribing and annotating Ukrainian and Polish audio data for LLM and ASR training with precise time-stamping and speaker identification. Performing strict Quality Assurance (QA) against technical guidelines.",
+        exp2_role: "Server Infrastructure Owner & Admin — Afterlight",
+        exp2_date: "Oct 2025 — May 2026",
+        exp2_type: "Linux Administration, SRE & Tech Support",
+        exp2_desc: "Owned end-to-end reliability of a live multiplayer server on Linux: configured hosting infrastructure, monitored uptime, managed complex access/permission rules (LuckPerms), and analyzed system logs to diagnose runtime errors and software conflicts.",
+        edu_uni: "DSW IDEIS (WSEI), Kraków",
+        edu_date: "Oct 2025 — Present (Expected 2029)",
+        edu_degree: "B.Eng. in Applied Informatics (Informatyka Stosowana) — 2nd Year Student",
+        edu_courses: "<b>Key Coursework:</b> Data Structures & Algorithms, Object-Oriented Programming (C#, Java), SQL Databases, Operating Systems, Network Fundamentals.",
+        certs_title: "Certifications",
+        certs_list: `
+            <li>• <b>C# Foundation Certificate</b> — freeCodeCamp & Microsoft Learn</li>
+            <li>• <b>API Beginner</b> — Postman</li>
+            <li>• <b>Generative AI Fundamentals</b> — Databricks</li>
+            <li>• <b>AI Prompt & Response Evaluation (Project Lyra)</b> — Welo Data</li>
+            <li>• <b>Data Annotation & QA</b> — TSMG Holding</li>
+        `,
+        langs_title: "Languages",
+        langs_list: `
+            <li>• <b>English: B2</b> (Upper-Intermediate, CEFR Certificate — International House)</li>
+            <li>• <b>Polish: B2</b> (State Certificate — Państwowa Komisja)</li>
+            <li>• <b>Ukrainian:</b> Native</li>
+        `,
+        proj_markt: "Online data-tracking & prediction web application with user authentication, custom profiles, and real-time Supabase PostgreSQL backend.",
+        proj_afterlight: "Official portal for a multiplayer Minecraft server. Features custom UI, live online player counter, IP copy, and technical SEO optimization.",
+        proj_tense: "Interactive web platform for mastering English grammar tenses with quizzes, Supabase integration, technical SEO (sitemap.xml, robots.txt), and Google Analytics.",
+        proj_mods: "8 standalone open-source Java mods published on Modrinth with 7,000+ total downloads. Includes client-server architecture, 3D model geometry debugging, and version management.",
+        proj_alert: "Community-driven emergency notification bot for Discord that broadcasts instant alerts from DM button interactions to public channels.",
+        proj_university: "Academic and personal software projects focusing on Data Structures & Algorithms, OOP, C#/.NET applications, and relational databases.",
         footer_tagline: "Let's build something awesome together."
     },
     uk: {
-        admin_title: "Досвід менеджменту та адміністрування",
-        admin_text: "Успішно адмініструю та керую ігровим сервером як безпосередньо у грі, так і в Discord. Займаюся кураторством команди модерації, налаштуванням хостингу, систем прав (LuckPerms) та підтримкою правил спільноти.",
-        nav_about: "Про мене", nav_projects: "Проєкти", nav_contact: "Контакти", nav_skills: "Стек технологій", nav_edu: "Цілі",
-        status_open: "🚀 Відкритий до роботи та стажувань",
-        btn_contacts: "📬 Контакти та інші посилання",
-        about_text: "Студент прикладної інформатики в DSW IDEIS з практичним досвідом у Java, C#, Python та веб-розробці. Створюю моди для Minecraft, Discord ботів та сайти — переважно для задоволення та постійного вивчення нового. Використовую ШІ (ChatGPT, Gemini, Claude) у своїй роботі не просто для генерації коду, а для його розуміння, дебагінгу та покращення. Зараз продовжую поглиблено вивчати C# (самостійно та в університеті), а також освоюю JavaScript в рамках університетської програми.",
-        edu_uni: "DSW IDEIS, Краків",
-        edu_date: "2025 — Поточний час",
-        edu_degree: "Прикладна інформатика (Informatyka Stosowana) — Закінчив 1-й курс, перехід на 2-й",
-        edu_goal: "Як студент прикладної інформатики, я зосереджений на інтеграції теоретичних знань із реальними бізнес-завданнями. Зараз я шукаю стажування або позицію Junior-розробника, де зможу робити вагомий внесок у проєкти, розв'язувати складні технічні задачі та професійно зростати. Моя мета — приносити користь команді, отримувати практичний досвід та дотримуватися високих стандартів розробки.",
-        proj_university: "Колекція академічних проєктів, лабораторних робіт та практичних завдань, виконаних під час навчання в університеті. Фокус на логіці програмування, структурах даних та алгоритмах.",
-        proj_university: "Колекція академічних проектів, лабораторних робіт та практичних завдань, розроблених під час навчання в університеті, зосереджених на логіці програмування, структурах даних та алгоритмах.",
-        proj_afterlight: "Сайт для сервера Minecraft. Кастомний дизайн, навігація, копіювання IP та лічильник онлайну.",
-        proj_tense: "Інтерактивна платформа для вивчення часів англійської граматики з тестами.",
-        proj_markt: "Динамічний сайт, інтегрований з онлайн-базою для роботи з даними в реальному часі.",
-        proj_alert: "Python-бот для Discord, який надсилає сповіщення про повітряну тривогу через взаємодію з кнопками.",
-        proj_mods: "8 опублікованих модів, датапаків та ресурспаків із 2000+ завантаженнями. Включає Safe Pets, Lava Detector тощо.",
+        nav_about: "Про мене", nav_exp: "Досвід", nav_edu: "Освіта", nav_projects: "Проєкти", nav_skills: "Стек технологій",
+        status_open: "🚀 Відкритий до стажування / Part-Time (15–20 год/тиж) у Польщі",
+        btn_cv: "📄 Завантажити CV (PDF)",
+        btn_contacts: "📬 Контакти та посилання",
+        about_text: "Студент 2-го курсу прикладної інформатики (B.Eng.) в DSW IDEIS (WSEI) у Кракові з повним правом на роботу в Польщі. Маю практичний досвід у C#/.NET, Java, JavaScript, SQL/Supabase та адмініструванні Linux-серверів. Поєдную академічну базу (структури даних, ООП) із сучасними AI-інструментами розробки, налагодженням коду та створенням вебдодатків.",
+        exp1_role: "AI Data Annotation Specialist — TSMG Holding",
+        exp1_date: "Серпень 2026 — Теперішній час",
+        exp1_type: "Фріланс / Віддалено",
+        exp1_desc: "Транскрибація та анотація українських і польських аудіоданих для тренування LLM та ASR-моделей із точним тайм-стемпінгом та ідентифікацією спікерів. Проведення контролю якості (QA) згідно з технічними вимогами.",
+        exp2_role: "Server Infrastructure Owner & Admin — Afterlight",
+        exp2_date: "Жовтень 2025 — Травень 2026",
+        exp2_type: "Linux-адміністрування, SRE та техпідтримка",
+        exp2_desc: "Відповідав за безперебійну роботу мультиплеєрного сервера на Linux: налаштування інфраструктури, моніторинг аптайму, керування правами доступу (LuckPerms), аналіз системних логів для усунення runtime-помилок і конфліктів ПЗ.",
+        edu_uni: "DSW IDEIS (WSEI), Краків",
+        edu_date: "Жовт 2025 — Теперішній час (Випуск 2029)",
+        edu_degree: "Інженер прикладної інформатики (Informatyka Stosowana) — Студент 2-го курсу",
+        edu_courses: "<b>Ключові предмети:</b> Структури даних та алгоритми, Об'єктно-орієнтоване програмування (C#, Java), Бази даних SQL, Операційні системи, Комп'ютерні мережі.",
+        certs_title: "Сертифікати",
+        certs_list: `
+            <li>• <b>C# Foundation Certificate</b> — freeCodeCamp & Microsoft Learn</li>
+            <li>• <b>API Beginner</b> — Postman</li>
+            <li>• <b>Generative AI Fundamentals</b> — Databricks</li>
+            <li>• <b>AI Prompt & Response Evaluation (Project Lyra)</b> — Welo Data</li>
+            <li>• <b>Data Annotation & QA</b> — TSMG Holding</li>
+        `,
+        langs_title: "Мови",
+        langs_list: `
+            <li>• <b>Англійська: B2</b> (Upper-Intermediate, сертифікат CEFR — International House)</li>
+            <li>• <b>Польська: B2</b> (Державний сертифікат — Państwowa Komisja)</li>
+            <li>• <b>Українська:</b> Рідна</li>
+        `,
+        proj_markt: "Вебдодаток для відстеження даних та прогнозів у реальному часі з авторизацією, профілями гравців та хмарною базою даних Supabase PostgreSQL.",
+        proj_afterlight: "Офіційний портал для Minecraft-сервера. Кастомний дизайн, лічильник онлайну в реальному часі, копіювання IP та технічна SEO-оптимізація.",
+        proj_tense: "Інтерактивна платформа для вивчення часів англійської мови з тестами, базою Supabase, технічним SEO (sitemap.xml, robots.txt) та Google Analytics.",
+        proj_mods: "8 опублікованих Java-модів на Modrinth із 7,000+ завантаженнями. Клієнт-серверна архітектура, налагодження 3D-геометрії моделей та підтримка релізів.",
+        proj_alert: "Discord-бот екстрених сповіщень спільноти, який миттєво транслює тривоги в публічні канали через інтерактивні кнопки в особистих повідомленнях.",
+        proj_university: "Колекція академічних і власних проєктів: фокус на структурах даних і алгоритмах (DSA), ООП, C#/.NET та реляційних базах даних.",
         footer_tagline: "Створимо щось круте разом."
     },
     pl: {
-        admin_title: "Doświadczenie w zarządzaniu i administracji",
-        admin_text: "Z powodzeniem zarządzam i administruję serwerem gier zarówno w grze, jak i na Discordzie. Zajmuję się kuratorstwem zespołu moderacji, konfiguracją hostingu, systemów uprawnień (LuckPerms) oraz utrzymaniem porządku w społeczności.",
-        nav_about: "O mnie", nav_projects: "Projekty", nav_contact: "Kontakt", nav_skills: "Stack technologiczny", nav_edu: "Cele",
-        status_open: "🚀 Otwarty na pracę i staże",
-        btn_contacts: "📬 Kontakty i inne linki",
-        about_text: "Student informatyki stosowanej na DSW IDEIS z praktycznym doświadczeniem w Javie, C#, Pythonie i tworzeniu stron WWW. Tworzę mody do Minecrafta, boty na Discorda i strony internetowe. Czasami używam narzędzi AI (ChatGPT, Gemini, Claude) nie tylko do generowania kodu, ale także do jego analizy, debugowania i ulepszania. Obecnie nadal intensywnie studiuję C# (zarówno samodzielnie, jak i na uniwersytecie), a także opanowuję JavaScript w ramach studiów uniwersyteckich.",
-        edu_uni: "DSW IDEIS, Kraków",
-        edu_date: "2025 — Obecnie",
-        edu_degree: "Informatyka Stosowana — Ukończony 1. rok, przejście na 2. rok",
-        edu_goal: "Jako student inżynierii oprogramowania skupiam się na łączeniu wiedzy teoretycznej z wyzwaniami praktycznymi. Aktywnie poszukuję stażu lub stanowiska Junior Developer, gdzie mógłbym wspierać zespół w tworzeniu wartościowych rozwiązań, mierzyć się z ambitnymi wyzwaniami technicznymi i rozwijać swoje kompetencje. Jestem zmotywowany do dostarczania realnych rezultatów i pracy zgodnie z wysokimi standardami inżynierskimi.",
-        proj_university: "Kolekcja projektów akademickich, prac laboratoryjnych i zadań praktycznych zrealizowanych podczas studiów uniwersyteckich, skupiająca się na logice programowania, strukturach danych i algorytmach.",
-        proj_afterlight: "Strona dla serwera Minecraft. Niestandardowy projekt, kopiowanie IP i licznik graczy online.",
-        proj_tense: "Interaktywna platforma do nauki czasów w gramatyce angielskiej z quizami.",
-        proj_markt: "Dynamiczna strona internetowa zintegrowana z bazą danych online.",
-        proj_alert: "Bot w Pythonie na Discorda wysyłający alarmy przeciwlotnicze poprzez interakcje z przyciskami.",
-        proj_mods: "8 opublikowanych modów z ponad 2000+ pobraniami (w tym m.in. Safe Pets).",
-        footer_tagline: "Stwórzmy cośl niesamowitego razem."
+        nav_about: "O mnie", nav_exp: "Doświadczenie", nav_edu: "Edukacja", nav_projects: "Projekty", nav_skills: "Stack technologiczny",
+        status_open: "🚀 Otwarty na staż / Part-Time (15–20h/tyg.) w Polsce",
+        btn_cv: "📄 Pobierz CV (PDF)",
+        btn_contacts: "📬 Kontakt i linki",
+        about_text: "Student 2. roku Informatyki Stosowanej (inż.) na DSW IDEIS (WSEI) w Krakowie z pełnym prawem do pracy w Polsce. Posiadam praktyczne doświadczenie w C#/.NET, Javie, JavaScript, SQL/Supabase oraz administracji serwerami Linux. Łączę wiedzę akademicką (struktury danych, OOP) z nowoczesnymi narzędziami AI, debugowaniem kodu i tworzeniem aplikacji webowych.",
+        exp1_role: "AI Data Annotation Specialist — TSMG Holding",
+        exp1_date: "Sierpień 2026 — Obecnie",
+        exp1_type: "Freelance / Zdalnie",
+        exp1_desc: "Transkrypcja i anotacja danych audio w języku ukraińskim i polskim na potrzeby trenowania modeli LLM i ASR z dokładnym oznaczaniem czasu oraz identyfikacją mówców. Kontrola jakości (QA) zgodnie z wytycznymi projektowymi.",
+        exp2_role: "Server Infrastructure Owner & Admin — Afterlight",
+        exp2_date: "Październik 2025 — Maj 2026",
+        exp2_type: "Administracja Linux, SRE i Wsparcie Techniczne",
+        exp2_desc: "Odpowiedzialność za niezawodność serwera multiplayer na systemie Linux: konfiguracja infrastruktury, monitorowanie uptime'u, zarządzanie uprawnieniami (LuckPerms) oraz analiza logów systemowych w celu diagnozowania błędów runtime.",
+        edu_uni: "DSW IDEIS (WSEI), Kraków",
+        edu_date: "Paź 2025 — Obecnie (Planowane ukończenie: 2029)",
+        edu_degree: "Inżynier Informatyki Stosowanej — Student 2. roku",
+        edu_courses: "<b>Kluczowe przedmioty:</b> Struktury danych i algorytmy, Programowanie obiektowe (C#, Java), Bazy danych SQL, Systemy operacyjne, Podstawy sieci komputerowych.",
+        certs_title: "Certyfikaty",
+        certs_list: `
+            <li>• <b>C# Foundation Certificate</b> — freeCodeCamp & Microsoft Learn</li>
+            <li>• <b>API Beginner</b> — Postman</li>
+            <li>• <b>Generative AI Fundamentals</b> — Databricks</li>
+            <li>• <b>AI Prompt & Response Evaluation (Project Lyra)</b> — Welo Data</li>
+            <li>• <b>Data Annotation & QA</b> — TSMG Holding</li>
+        `,
+        langs_title: "Języki",
+        langs_list: `
+            <li>• <b>Angielski: B2</b> (Upper-Intermediate, Certyfikat CEFR — International House)</li>
+            <li>• <b>Polski: B2</b> (Certyfikat Państwowej Komisji ds. Poświadczania Znajomości Języka Polskiego)</li>
+            <li>• <b>Ukraiński:</b> Ojczysty</li>
+        `,
+        proj_markt: "Aplikacja webowa do śledzenia danych w czasie rzeczywistym z autoryzacją użytkowników, profilami i bazą danych Supabase PostgreSQL.",
+        proj_afterlight: "Oficjalna strona serwera Minecraft. Niestandardowy interfejs, licznik graczy online na żywo, kopiowanie IP oraz optymalizacja techniczna SEO.",
+        proj_tense: "Interaktywna platforma do nauki czasów gramatycznych z quizami, integracją Supabase, technicznym SEO (sitemap.xml, robots.txt) i Google Analytics.",
+        proj_mods: "8 autorskich modów Java opublikowanych na Modrinth z ponad 7 000 pobrań. Architektura klient-serwer, debugowanie geometrii modeli 3D oraz zarządzanie wersjami.",
+        proj_alert: "Bot ostrzegawczy na Discorda umożliwiający natychmiastowe wysyłanie alertów do kanałów publicznych za pomocą przycisków w wiadomościach prywatnych.",
+        proj_university: "Zbiór projektów akademickich i własnych skupionych na strukturach danych i algorytmach (DSA), OOP, C#/.NET oraz relacyjnych bazach danych.",
+        footer_tagline: "Stwórzmy coś niesamowitego razem."
     }
 };
 
 const savedLang = localStorage.getItem('language') || 'en';
 
 function updateLanguage(lang) {
+    document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
+            el.innerHTML = translations[lang][key];
         }
     });
     
